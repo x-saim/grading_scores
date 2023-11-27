@@ -11,12 +11,9 @@ This C# console application is designed to:
     - divides the values of extra credit assignments by 10 before adding extra credit scores to the sum of exam scores.
 - use the following report format to report student grades: 
 
-    Student         Grade
+  Student         Exam Score      Overall Grade   Extra Credit
 
-    Sophia:         92.2    A-
-    Andrew:         89.6    B+
-    Emma:           85.6    B
-    Logan:          91.2    A-
+  Sophia          92.2            95.88   A       92 (3.68 pts)
 */
 int examAssignments = 5;
 
@@ -33,7 +30,7 @@ string currentStudentLetterGrade = "";
 
 // display the header row for scores/grades
 Console.Clear();
-Console.WriteLine("Student\t\tGrade\tLetter Grade\n");
+Console.WriteLine("Student\t\tExam Score\tOverall Grade\tExtra Credit\n");
 
 /*
 The outer foreach loop is used to:
@@ -59,11 +56,15 @@ foreach (string name in studentNames)
   else if (currentStudent == "Logan")
     studentScores = loganScores;
 
-  int sumAssignmentScores = 0;
+  int gradedAssignments = 0;
+  int gradedExtraCreditAssignments = 0;
+
+  int sumExamScores = 0;
+  int sumExtraCreditScores = 0;
 
   decimal currentStudentGrade = 0;
-
-  int gradedAssignments = 0;
+  decimal currentStudentExamScore = 0;
+  decimal currentStudentExtraCreditScore = 0;
 
   /* 
   the inner foreach loop sums assignment scores
@@ -74,13 +75,22 @@ foreach (string name in studentNames)
     gradedAssignments += 1;
 
     if (gradedAssignments <= examAssignments)
-      sumAssignmentScores += score;
+    {
+      sumExamScores += score;
+    }
 
     else
-      sumAssignmentScores += score / 10;
+    {
+      gradedExtraCreditAssignments += 1;
+      sumExtraCreditScores += score;
+    }
   }
 
-  currentStudentGrade = (decimal)(sumAssignmentScores) / examAssignments;
+  currentStudentExamScore = (decimal)(sumExamScores) / examAssignments;
+
+  currentStudentExtraCreditScore = (decimal)(sumExtraCreditScores) / gradedExtraCreditAssignments;
+
+  currentStudentGrade = (decimal)((decimal)sumExamScores + ((decimal)sumExtraCreditScores / 10)) / examAssignments;
 
   if (currentStudentGrade >= 97)
     currentStudentLetterGrade = "A+";
@@ -121,10 +131,10 @@ foreach (string name in studentNames)
   else
     currentStudentLetterGrade = "F";
 
-  // Student         Grade
-  // Sophia:         92.2    A-
+  // Student         Exam Score      Overall Grade   Extra Credit
+  // Sophia          92.2            95.88   A       92 (3.68 pts)
 
-  Console.WriteLine($"{currentStudent}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}");
+  Console.WriteLine($"{currentStudent}\t\t{currentStudentExamScore}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}\t{currentStudentExtraCreditScore} ({(((decimal)sumExtraCreditScores / 10) / examAssignments)} pts)");
 }
 
 // required for running in VS Code (keeps the Output windows open to view results)

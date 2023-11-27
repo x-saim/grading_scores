@@ -1,0 +1,14 @@
+/home/labber/CSharpProjects/grading_scores/Starter/bin/Debug/net7.0/Starter
+/home/labber/CSharpProjects/grading_scores/Starter/bin/Debug/net7.0/Starter.deps.json
+/home/labber/CSharpProjects/grading_scores/Starter/bin/Debug/net7.0/Starter.runtimeconfig.json
+/home/labber/CSharpProjects/grading_scores/Starter/bin/Debug/net7.0/Starter.dll
+/home/labber/CSharpProjects/grading_scores/Starter/bin/Debug/net7.0/Starter.pdb
+/home/labber/CSharpProjects/grading_scores/Starter/obj/Debug/net7.0/Starter.GeneratedMSBuildEditorConfig.editorconfig
+/home/labber/CSharpProjects/grading_scores/Starter/obj/Debug/net7.0/Starter.AssemblyInfoInputs.cache
+/home/labber/CSharpProjects/grading_scores/Starter/obj/Debug/net7.0/Starter.AssemblyInfo.cs
+/home/labber/CSharpProjects/grading_scores/Starter/obj/Debug/net7.0/Starter.csproj.CoreCompileInputs.cache
+/home/labber/CSharpProjects/grading_scores/Starter/obj/Debug/net7.0/Starter.dll
+/home/labber/CSharpProjects/grading_scores/Starter/obj/Debug/net7.0/refint/Starter.dll
+/home/labber/CSharpProjects/grading_scores/Starter/obj/Debug/net7.0/Starter.pdb
+/home/labber/CSharpProjects/grading_scores/Starter/obj/Debug/net7.0/Starter.genruntimeconfig.cache
+/home/labber/CSharpProjects/grading_scores/Starter/obj/Debug/net7.0/ref/Starter.dll
